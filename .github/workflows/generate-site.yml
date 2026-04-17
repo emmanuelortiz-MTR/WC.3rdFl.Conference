@@ -1,0 +1,43 @@
+name: Generate 1st Floor Conference Room Guide
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: List files for debugging
+        run: ls -la
+
+      - name: Run generate.py
+        run: python generate.py
+
+      - name: List output directory (debug)
+        run: ls -la output/ || echo "output/ not yet created"
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git add output/
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-update generated site"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin ${{ github.ref_name }}
+          else
+            echo "No changes to commit"
+          fi
