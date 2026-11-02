@@ -7,11 +7,77 @@
     <style>
         body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; text-align: center; }
         .button { display: inline-block; padding: 1rem 2rem; margin: 1rem 0; background: #28a745; color: white; text-decoration: none; border-radius: 8px; }
+        .lang-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
+        }
+        .lang-toggle:hover {
+            background: #218838;
+        }
+        .lang-en, .lang-es {
+            display: none;
+        }
+        .lang-en.active, .lang-es.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <h1>🎉 Good job! 🎉</h1>
-    <p>You have successfully locate the shared space screen and turn it on.</p>
-    <a href="index.html" class="button">Start another task</a>
+    <button class="lang-toggle" onclick="toggleLanguage()">Español</button>
+    <h1>
+        <span class="lang-en active">🎉 Good job! 🎉</span>
+        <span class="lang-es">🎉 ¡Buen trabajo! 🎉</span>
+    </h1>
+    <p>
+        <span class="lang-en active">You have successfully locate the shared space screen and turn it on.</span>
+        <span class="lang-es">Has completado exitosamente locate the shared space screen and turn it on.</span>
+    </p>
+    <a href="index.html" class="button">
+        <span class="lang-en active">Start another task</span>
+        <span class="lang-es">Iniciar otra tarea</span>
+    </a>
+    <script>
+        let currentLang = 'en';
+        
+        function toggleLanguage() {
+            const toggleBtn = document.querySelector('.lang-toggle');
+            if (currentLang === 'en') {
+                currentLang = 'es';
+                toggleBtn.textContent = 'English';
+            } else {
+                currentLang = 'en';
+                toggleBtn.textContent = 'Español';
+            }
+            updateLanguage(currentLang);
+        }
+        
+        function updateLanguage(lang) {
+            document.querySelectorAll('.lang-en, .lang-es').forEach(el => {
+                el.classList.remove('active');
+                if (el.classList.contains(`lang-${lang}`)) {
+                    el.classList.add('active');
+                }
+            });
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            currentLang = savedLang;
+            if (savedLang === 'es') {
+                document.querySelector('.lang-toggle').textContent = 'English';
+            }
+            updateLanguage(savedLang);
+        });
+    </script>
 </body>
 </html>
