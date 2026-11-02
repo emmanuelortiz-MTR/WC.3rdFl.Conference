@@ -2,42 +2,87 @@
   "options": [
     {
       "id": "start",
-      "title": "Locate the Shared Space Screen and turn it on",
+      "title": {
+        "en": "Locate the Shared Space Screen and turn it on",
+        "es": "Localice la pantalla del espacio compartido y enciéndala"
+      },
       "steps": [
         {
-          "instruction": "The TV looks something like this: ",
+          "instruction": {
+            "en": "The TV looks something like this: ",
+            "es": "La TV se ve algo así: "
+          },
           "image": "3rdFl.TV.off.jpg",
-          "alt": "Picture showing where the main room TV is"
+          "alt": {
+            "en": "Picture showing where the main room TV is",
+            "es": "Imagen que muestra dónde está la TV principal de la sala"
+          }
         },
         {
-          "instruction": "On this next screen, let's pull up our INPUT options. Click on the menu button here and go to INPUTS",
+          "instruction": {
+            "en": "On this next screen, let's pull up our INPUT options. Click on the menu button here and go to INPUTS",
+            "es": "En esta siguiente pantalla, abramos nuestras opciones de ENTRADA (INPUTS). Haga clic en el botón de menú aquí y vaya a ENTRADAS"
+          },
           "image": "3rdFl.TV.on.jpg",
-          "alt": "Picture showing TV on and the menu button"
+          "alt": {
+            "en": "Picture showing TV on and the menu button",
+            "es": "Imagen que muestra la TV encendida y el botón de menú"
+          }
         },
         {
-          "instruction": "Here, we want to switch the input to the onboard computer. Click PC and select HDMI",
+          "instruction": {
+            "en": "Here, we want to switch the input to the onboard computer. Click PC and select HDMI",
+            "es": "Aquí, queremos cambiar la entrada a la computadora integrada. Haga clic en PC y seleccione HDMI"
+          },
           "image": "3rdFl.TV.inputs.jpg",
-          "alt": "Picture showing Inputs screen and where to click"
+          "alt": {
+            "en": "Picture showing Inputs screen and where to click",
+            "es": "Imagen que muestra la pantalla de Entradas y dónde hacer clic"
+          }
         },
         {
-          "instruction": "A window similar to this should come up. Now let's make sure the computer is on.",
+          "instruction": {
+            "en": "A window similar to this should come up. Now let's make sure the computer is on.",
+            "es": "Debería aparecer una ventana similar a esta. Ahora asegurémonos de que la computadora esté encendida."
+          },
           "image": "3rdFl.TV.HDMI.jpg",
-          "alt": "Picture showing PC Input window open"
+          "alt": {
+            "en": "Picture showing PC Input window open",
+            "es": "Imagen que muestra la ventana de entrada de PC abierta"
+          }
         },
         {
-          "instruction": "The computer we're looking for should be to the right side of the screen. Check to see if it's powered on, if it's off, go ahead and push the power button.",
+          "instruction": {
+            "en": "The computer we're looking for should be to the right side of the screen. Check to see if it's powered on, if it's off, go ahead and push the power button.",
+            "es": "La computadora que estamos buscando debería estar en el lado derecho de la pantalla. Verifique si está encendida; si está apagada, presione el botón de encendido."
+          },
           "image": "3rdFl.ComputerLocation.jpg",
-          "alt": "Picture showing computer location"
+          "alt": {
+            "en": "Picture showing computer location",
+            "es": "Imagen que muestra la ubicación de la computadora"
+          }
         },
         {
-          "instruction": "Once the computer is powered on and cycles through it's startup, we should see a screen that looks like this:",
+          "instruction": {
+            "en": "Once the computer is powered on and cycles through it's startup, we should see a screen that looks like this:",
+            "es": "Una vez que la computadora esté encendida y complete su inicio, deberíamos ver una pantalla que se vea así:"
+          },
           "image": "3rdFl.TV.LoginScreen.jpg",
-          "alt": "Picture showing PC login screen and where to click for other user"
+          "alt": {
+            "en": "Picture showing PC login screen and where to click for other user",
+            "es": "Imagen que muestra la pantalla de inicio de sesión de la PC y dónde hacer clic para otro usuario"
+          }
         },
         {
-          "instruction": "Now you just gotta log in! Find your keyboard and power it on and feel free to start operating the shared space screen!",
+          "instruction": {
+            "en": "Now you just gotta log in! Find your keyboard and power it on and feel free to start operating the shared space screen!",
+            "es": "¡Ahora solo tiene que iniciar sesión! ¡Encuentre su teclado y enciéndalo, y siéntase libre de comenzar a operar la pantalla del espacio compartido!"
+          },
           "image": "3rdFl.ComputerKeyboard.jpg",
-          "alt": "Picture showing the shared space computer and the swich to turn it on"
+          "alt": {
+            "en": "Picture showing the shared space computer and the switch to turn it on",
+            "es": "Imagen que muestra la computadora del espacio compartido y el interruptor para encenderla"
+          }
         }
       ]
     }
